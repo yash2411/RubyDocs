@@ -69,7 +69,32 @@ end
 # p fruits
 # p new_arr
 
-new_arr = fruits.select { |fruit| fruit.length>5}
-new_arr = fruits.reject { |fruit| fruit.length>5}
+# new_arr = fruits.select { |fruit| fruit.length>5}
+# new_arr = fruits.reject { |fruit| fruit.length>5}
 p fruits
-p new_arr
+# p new_arr
+
+arr1, arr2 = fruits.partition {|fruit| fruit.include?('M')}
+# p arr1, arr2
+
+# fruits.push(nil)
+new_arr = fruits.any? { |fruit| fruit.nil? }
+new_arr = fruits.all? { |fruit| fruit.nil? }
+# p new_arr
+p fruits
+# p fruits.find { |fruit| fruit.include?('p')}
+# p fruits.detect { |fruit| fruit.include?('n')}
+
+p fruits.index { |fruit| fruit.include?('ppl')}
+p fruits.find_index { |fruit| fruit.include?('ppl')}
+
+p [1, 2, 5555, 9999].max
+p [1, 2, 5555, 9999].min 
+
+p fruits.max
+
+def adder(a, *numbers)
+    p numbers.sum 
+end
+
+adder(2,3, 4)
