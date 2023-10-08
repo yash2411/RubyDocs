@@ -1,3 +1,4 @@
+require 'debug'
 puts "Hello\n"
 puts 'Hello\n'
 x=10
@@ -58,3 +59,68 @@ puts first_name.downcase
 puts first_name.swapcase
 puts first_name.capitalize
 puts first_name.reverse
+
+sentence = "Hi, my name is Yash. My favorite hobby is building apps"
+p sentence.split("e")
+
+p sentence.chars
+sentence.each_char do |c|
+    if c == 'e'
+        p "Found e"
+        break
+    end
+end
+
+# def custom_split(text, delimiter)
+#     new_arr=[]
+#     str=''
+#     text.each_char do |c|
+#         if c==delimiter
+#             new_arr.push(str)
+#             str=''
+#         else
+#             str.concat(c) 
+#         end
+#     end 
+#     new_arr.push(str)
+#     new_arr,
+# end
+
+# p custom_split(" Hello", " ")
+p [1, 2, 3].join(',')
+
+def custom_join(arr, deli)
+    str=''
+    arr.each_with_index do |val, index|
+        unless (arr.length - 1) == index
+            str.concat(val, deli)
+        else
+            str.concat(val)
+        end 
+    end
+    str
+end 
+
+# p custom_join(["Hello", "Hi"], '!')
+
+p "Hello".count('elo')
+
+def custom_count(str, char)  
+    count=0 
+    str.each_char do |c|
+        if char.include?(c)
+            count = count.succ
+        end
+    end
+    count
+end 
+
+# p custom_count("World", 'd')
+p "Hello".index('lo')
+p "hello".index("l")
+p "hello".rindex("l")
+p "hello".index("l",3)
+
+new_str = "Hello World"
+new_str.delete!('lo ')
+p new_str
