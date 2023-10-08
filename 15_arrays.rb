@@ -96,5 +96,48 @@ p fruits.max
 def adder(a, *numbers)
     p numbers.sum 
 end
-
+# *numbers is know as sponge or splat operator 
 adder(2,3, 4)
+
+fruits.reverse
+p fruits
+fruits.reverse!
+p fruits
+fruits.sort 
+p fruits.sort
+
+p fruits.uniq
+p fruits.uniq!
+fruits.push(false, nil)
+p fruits
+fruits.compact!
+p fruits
+
+arr = [20, 40, 50, 60, 70]
+p arr.inject(5) { |x, y| x+y }
+p arr.reduce(2) { |sum, val| sum+val }
+
+counts = fruits.reduce({}) do |h, fruit|
+    if h[fruit].nil?
+        h[fruit] = 1
+    else   
+        h[fruit]+=1
+    end
+    h
+end
+# p counts
+
+# arr=[[1,2], [3,[4,5]], [7]]
+# p arr.flatten 
+
+
+# p arr.sample
+# p arr.sample(2)
+
+# p arr.reduce(0,:+)
+
+p arr*2
+p [1, 2, 3, 4, 4, 5] | [3, 4, 5, 6]
+p [1, 2, 3, 4, 4, 5].|([3, 4, 5, 6])
+p [1, 2, 3, 4, 4, 5] - [3, 4, 5, 6]
+p [1, 2, 3, 4, 4, 5] & [3, 4, 5, 6]
